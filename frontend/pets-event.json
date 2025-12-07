@@ -1,0 +1,112 @@
+[
+  {
+    "title": "Paws & Play Adoption Day",
+    "brief": "A fun outdoor gathering where families can meet adoptable pets.",
+    "date": "2025",
+    "calMonth": "July 5",
+    "calDay": "Sat",
+    "time": "10:00 AM",
+    "place": "City Central Park",
+    "img": "images/volunteer.jpg",
+    "category": "upcoming"
+  },
+  {
+    "title": "Free Pet Vaccination Drive",
+    "brief": "Rabies and 5-in-1 vaccination for rescued animals and owned pets.",
+    "date": "2025",
+    "calMonth": "July 12",
+    "calDay": "Sat",
+    "time": "1:00 PM",
+    "place": "Barangay Health Center Hall",
+    "img": "images/volunteer.jpg",
+    "category": "upcoming"
+  },
+  {
+    "title": "Shelter Clean-Up Day",
+    "brief": "Be part of our quarterly clean-up activity to improve the animals' living spaces.",
+    "date": "2025",
+    "calMonth": "July 20",
+    "calDay": "Sun",
+    "time": "8:00 AM",
+    "place": "Happy Tails Shelter",
+    "img": "images/volunteer.jpg",
+    "category": "upcoming"
+  },
+  {
+    "title": "Community Education Talk",
+    "brief": "Learn about responsible pet ownership and animal welfare.",
+    "date": "2025",
+    "calMonth": "July 27",
+    "calDay": "Sun",
+    "time": "2:00 PM",
+    "place": "Town Auditorium",
+    "img": "images/volunteer.jpg",
+    "category": "upcoming"
+  },
+  {
+    "title": "Pet Food Donation Drive",
+    "brief": "Collecting dry and wet food for rescued cats and dogs.",
+    "date": "2025",
+    "calMonth": "August 3",
+    "calDay": "Sun",
+    "time": "10:00 AM",
+    "place": "Mall Atrium",
+    "img": "images/volunteer.jpg",
+    "category": "upcoming"
+  },
+  {
+    "title": "Rescue Transport Volunteers Meetup",
+    "brief": "Orientation for new rescue transport volunteers.",
+    "date": "2024",
+    "calMonth": "Nov 10",
+    "calDay": "Sun",
+    "time": "3:00 PM",
+    "place": "Shelter Office HQ",
+    "img": "images/volunteer.jpg",
+    "category": "past"
+  },
+  {
+    "title": "Holiday Pet Adoption Fair",
+    "brief": "Find a furry friend to bring home this holiday season.",
+    "date": "2024",
+    "calMonth": "Dec 15",
+    "calDay": "Sun",
+    "time": "9:00 AM",
+    "place": "Festival Grounds",
+    "img": "images/volunteer.jpg",
+    "category": "past"
+  },
+  {
+    "title": "Vet Consultation Outreach",
+    "brief": "Free basic pet checkups for low-income pet owners.",
+    "date": "2025",
+    "calMonth": "Jan 21",
+    "calDay": "Tue",
+    "time": "10:30 AM",
+    "place": "Barangay Multipurpose Hall",
+    "img": "images/volunteer.jpg",
+    "category": "past"
+  },
+  {
+    "title": "Stray Feeding Program Launch",
+    "brief": "Kick-off event for our community stray feeding initiative.",
+    "date": "2025",
+    "calMonth": "Feb 9",
+    "calDay": "Sun",
+    "time": "5:00 PM",
+    "place": "Northside Community Park",
+    "img": "images/volunteer.jpg",
+    "category": "past"
+  },
+  {
+    "title": "Pet Grooming for a Cause",
+    "brief": "Get your pet groomed and help raise funds for rescue operations.",
+    "date": "2025",
+    "calMonth": "Mar 16",
+    "calDay": "Sun",
+    "time": "11:00 AM",
+    "place": "Downtown Grooming Center",
+    "img": "images/volunteer.jpg",
+    "category": "past"
+  }
+]

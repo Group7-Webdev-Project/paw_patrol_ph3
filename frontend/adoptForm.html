@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="adopt.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <a href="index.html" class="logo-link">
+        <aside class="logo-container">
+            <div class="logo-img-container">
+                <img src="./images/logo1.png" alt="">
+            </div>
+            <h3>Paw Patrol</h3>
+        </aside>
+        </a>
+  
+        <nav class="navigation" id="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="index.html">Adopt</a>
+            <a href="index.html">About Us</a>
+            <a href="index.html">Get Involved</a>
+            <a href="index.html">Petcare Tips</a>
+        </nav>
+        
+         <div class="small-screen-menu" id="small-screen-menu">
+            <a href="index.html">Home</a>
+            <a href="index.html">Adopt</a>
+            <a href="index.html">About Us</a>
+            <a href="index.html">Get Involved</a>
+            <a href="index.html">Petcare Tips</a>
+        </div>
+
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <main class="pet-details-main">
+    <section class="pet-details-container">
+        <!-- FORM CARD -->
+        <form class="adoption-form" id="adoptionForm">
+        <div class="pet-header">
+            <h1>Pet Adoption Form</h1>
+            <p>You're one step away from giving a loving home!</p>
+        </div>
+
+        <div class="form-sections">
+            <!-- LEFT COLUMN -->
+            <aside>
+
+            <div class="detail-card pet-preview">
+                <h3>Selected Pet</h3>
+                <p><b>Name:</b> <span id="petNameDisplay">Pet Name</span></p>
+                <p><b>Breed:</b> <span id="petBreedDisplay">Breed</span></p>
+                <p><b>Age:</b> <span id="petAgeDisplay">Age</span></p>
+            </div>
+
+            <h3>Your Information</h3>
+
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="adoptFullName" required placeholder="Juan Dela Cruz">
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="adoptEmail" required placeholder="you@email.com">
+            </div>
+
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="text" id="adoptPhone" required placeholder="0912 345 6789">
+            </div>
+
+            </aside>
+
+            <!-- RIGHT COLUMN -->
+            <aside>
+            <h3>Home & Lifestyle</h3>
+
+            <div class="form-group">
+                <label>Address</label>
+                <input type="text" id="adoptAddress" required placeholder="Complete Address">
+            </div>
+
+            <div class="form-group">
+                <label>Do you have other pets?</label>
+                <select id="adoptOtherPets" required>
+                <option value="" disabled selected>Select</option>
+                <option>Yes</option>
+                <option>No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Type of Home</label>
+                <select id="adoptHomeType" required>
+                <option value="" disabled selected>Select</option>
+                <option>House</option>
+                <option>Apartment</option>
+                <option>Farm</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Why do you want to adopt?</label>
+                <textarea id="adoptStory" rows="5" required placeholder="Share your story..."></textarea>
+            </div>
+            </aside>
+
+        </div>
+
+        <div class="pet-actions">
+            <button class="adoptbtn btn-primary" type="submit">Submit Application</button>
+            <a href="index.html" class="adoptbtn btn-secondary">Cancel</a>
+        </div>
+        </form>
+    </section>
+</main>
+
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <section class="upper-footer">
+            <div class="footer-logo-container" id="footer-logo-container">
+                <div class="footer-img-container">
+                    <img src="./images/logo1.png" alt="">
+                </div>
+                <h3>Paw Patrol</h3>
+            </div>
+            
+            <div class="footer-info-container" id="footer-info-container">
+                <article>
+                    <aside>
+                        <h4>RESOURCES <i class="fa-solid fa-caret-down"></i></h4>
+                        <a href="">FAQs</a>
+                        <a href="">Partnerships</a>
+                        <a href="">Contact Us</a>
+                    </aside>
+                    <aside>
+                        <h4>GET INVOLVED <i class="fa-solid fa-caret-down"></i></h4>
+                        <a href="">Get Involve</a>
+                        <a href="">Adopting Pets</a>
+                        <a href="">Animal Shelters & Rescues</a>
+                        <a href="">Other Types of Pets</a>
+                    </aside>
+                    <aside>
+                        <h4>ABOUT DOGS & PUPPIES <i class="fa-solid fa-caret-down"></i></h4>
+                        <a href="">All About Dogs</a>
+                        <a href="">Dog Adoption</a>
+                        <a href="">Dog Feeding</a>
+                        <a href="">Dog Health & Wellness</a>
+                        <a href="">Dog Training</a>
+                        <a href="">Other Dog Pet Information</a>
+                    </aside>
+                    <aside>
+                        <h4>ABOUT CATS & KITTENS <i class="fa-solid fa-caret-down"></i></h4>
+                        <a href="">All About Cats</a>
+                        <a href="">Cat Adoption</a>
+                        <a href="">Cat Feeds</a>
+                        <a href="">Cat Health & Wellness</a>
+                        <a href="">Cat Training</a>
+                        <a href="">Other Cat Information</a>
+                    </aside>
+                </article>
+                
+                <aside class="footer-sign-up">
+                    <p>To get the latest on pet adoption and pet care, sign up for the Paw Patrol newsletter.</p>
+                    <a href="" class="sign-up-btn">Sign Up</a>
+                </aside>
+            </div>
+
+            <div class="legal-info">
+                <a href="">Shelter & Rescue Registration</a>
+                <a href="">Terms of Service</a>
+                <a href="">Privacy Policy</a>
+                <a href="">Cookie Policy</a>
+                <a href="">Accesibility</a>
+            </div>
+        </section>
+
+        <section class="lower-footer">
+            <div>
+                <p>
+                    <span>&copy;2025 Paw Patrol.netlify.app</span>   
+                    <span>All trademarks are owned by Tomioka-san, or used with permission.</span>
+                </p>
+                <aside>
+                    <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-youtube"></i></a>
+                </aside>
+            </div>
+        </section>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="config.js"></script>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const petId = parseInt(urlParams.get('id')); 
+
+        let petsData = [];
+        let emailjsReady = false;
+
+        // Initialize EmailJS 
+        function initEmailJS() {
+            try {
+                if (window.emailjs) {
+                    emailjs.init({
+                        publicKey: CONFIG.EMAILJS_ADOPT_PUBLIC_KEY
+                    });
+                    emailjsReady = true;
+                    console.log('EmailJS initialized successfully');
+                } else {
+                    console.error('window.emailjs not found, retrying...');
+                    setTimeout(initEmailJS, 500);
+                }
+            } catch (error) {
+                console.error('Error initializing EmailJS:', error);
+                setTimeout(initEmailJS, 500);
+            }
+        }
+
+        window.addEventListener('load', function() {
+            initEmailJS();
+        });
+        if (document.readyState === 'complete') {
+            initEmailJS();
+        }
+        var checkInterval = setInterval(function() {
+            if (window.emailjs && !emailjsReady) {
+                initEmailJS();
+                clearInterval(checkInterval);
+            }
+        }, 500);
+
+        // Load pets data from JSON
+        async function loadPetsData() {
+            try {
+                const response = await fetch('./pets-data.json');
+                if (!response.ok) throw new Error('Failed to load pets data');
+                const data = await response.json();
+                petsData = data.pets;
+                populatePetInfo();
+            } catch (error) {
+                console.error(error);
+                document.querySelector('.pet-details-container').innerHTML = '<p>Could not load pet info.</p>';
+            }
+        }
+
+        // Populate the form with selected pet info
+        function populatePetInfo() {
+            const pet = petsData.find(p => p.id === petId);
+            if (!pet) return;
+
+            document.getElementById('petNameDisplay').textContent = pet.name;
+            document.getElementById('petBreedDisplay').textContent = pet.breed;
+            document.getElementById('petAgeDisplay').textContent = pet.age;
+        }
+
+        // Handle adoption form submission
+        function setupAdoptionFormSubmission() {
+            const adoptionForm = document.getElementById('adoptionForm');
+            if (adoptionForm) {
+                adoptionForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    if (!emailjsReady || !window.emailjs) {
+                        alert('Email service is loading. Please wait a moment and try again.');
+                        console.error('EmailJS not ready. Ready:', emailjsReady, 'Exists:', !!window.emailjs);
+                        return;
+                    }
+
+                    const pet = petsData.find(p => p.id === petId);
+                    if (!pet) {
+                        alert('Error: Pet information not found');
+                        return;
+                    }
+
+                    const templateParams = {
+                        to_email: 'pawpatrolorganization@gmail.com',
+                        adopter_name: document.getElementById('adoptFullName').value,
+                        adopter_email: document.getElementById('adoptEmail').value,
+                        adopter_phone: document.getElementById('adoptPhone').value,
+                        adopter_address: document.getElementById('adoptAddress').value,
+                        other_pets: document.getElementById('adoptOtherPets').value,
+                        home_type: document.getElementById('adoptHomeType').value,
+                        adoption_story: document.getElementById('adoptStory').value,
+                        pet_name: pet.name,
+                        pet_breed: pet.breed,
+                        pet_age: pet.age,
+                        submission_date: new Date().toLocaleDateString()
+                    };
+
+                    console.log('Sending adoption application...');
+
+                    // Send email
+                    emailjs.send(CONFIG.EMAILJS_ADOPT_SERVICE_ID, CONFIG.EMAILJS_ADOPT_TEMPLATE_ID, templateParams)
+                        .then(function(response) {
+                            console.log('Email sent!', response);
+                            alert('Thank you for your adoption application! We will review it and contact you shortly.');
+                            adoptionForm.reset();
+                            // Redirect after success
+                            setTimeout(() => {
+                                window.location.href = 'index.html';
+                            }, 2000);
+                        })
+                        .catch(function(error) {
+                            console.error('Email failed:', error);
+                            alert('Error: ' + (error.text || error.message || 'There was an error submitting your application.'));
+                        });
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadPetsData();
+            setupAdoptionFormSubmission();
+        });
+    </script>
+</body>
+</html>
