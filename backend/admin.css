@@ -210,3 +210,113 @@ div.adopt-card-container article.adopt-card div.adopter-info aside {
         color: black;
         font-size: 14px;
     }
+
+    /* ===== Donation & Volunteer Sections (Match Adoption Style) ===== */
+
+/* Donation Section */
+section#donation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section#donation h2 {
+    font-family: 'LEMON', sans-serif;
+    font-size: 24px;
+}
+
+section#donation .adopt-card-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Donation cards visually same as adopt cards */
+section#donation .donation-card {
+    width: 500px;
+    margin: 10px;
+    background-color: #a78bfa92;
+    padding: 20px;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+/* Reuse card internal layout */
+section#donation .donation-card .adopter-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+section#donation .donation-card aside {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+section#donation .donation-card span,
+section#donation .donation-card p {
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: rgb(50, 50, 50);
+}
+
+section#donation .donation-card b {
+    color: black;
+}
+
+/* ===== Volunteer Section ===== */
+
+section#volunteer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section#volunteer h2 {
+    font-family: 'LEMON', sans-serif;
+    font-size: 24px;
+}
+
+section#volunteer .adopt-card-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Volunteer card style same as adopt cards */
+section#volunteer .volunteer-card {
+    width: 500px;
+    margin: 10px;
+    background-color: #a78bfa92;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+section#volunteer .volunteer-card .adopter-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+section#volunteer .volunteer-card aside {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+section#volunteer .volunteer-card span,
+section#volunteer .volunteer-card p {
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: rgb(50, 50, 50);
+}
+
+section#volunteer .volunteer-card b {
+    color: black;
+}

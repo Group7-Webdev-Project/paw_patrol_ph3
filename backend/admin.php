@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="admin.css">
 </head>
 <body>
-    <!-- ========== Header Section ========== -->
     <header class="org-name">
         <div class="org-img-container">
             <img src="../frontend/images/logo1.png" alt="">
@@ -20,10 +19,8 @@
         <h1>Paw Patrol</h1>
     </header>
 
-    <!-- ========== Main Content Section ========== -->
     <main class="main-content">
 
-        <!-- ========== Navigation Section ========== -->
         <nav class="collapsed" id="navbar">
             <button id="toggle-nav"><span class="material-symbols-outlined">menu</span></button>
             <li><a href="#adoption">
@@ -47,12 +44,14 @@
             </a></li>
         </nav>
 
-        <!-- ========== Adoption Tab ========== -->
         <section class="admin-page" id="adoption">
             <h2>Adoption Dashboard</h2>
             <div class="adopt-card-container">
                 <?php
-                    $sql = "SELECT * FROM adoption_tbl";
+                    // Re-include config.php or ensure connection is open here if it was closed prematurely
+                    // Assuming $conn is available from the initial 'include config.php'
+
+                    $sql = "SELECT * FROM adoption_tbl ORDER BY submission_date DESC";
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
@@ -83,21 +82,87 @@
                     } else {
                         echo "<p class='no-adopt-record'>No adoption requests found.</p>";
                     }
-
-                    $conn->close();
+                    // Removed the premature $conn->close();
                 ?>
             </div>
             
         </section>
 
-        <!-- ========== Donation Tab ========== -->
         <section class="admin-page" id="donation">
+            <h2>Donation Dashboard</h2>
+            <div class="adopt-card-container">
+                <?php
+                    // Assuming $conn is still open
+                    $sql_donate = "SELECT * FROM donation_tbl ORDER BY donation_date DESC";
+                    $result_donate = $conn->query($sql_donate);
 
+                    if ($result_donate->num_rows > 0) {
+                        while($row = $result_donate->fetch_assoc()) {
+                            echo "
+                                <article class='adopt-card donation-card'>
+                                    <div class='adopter-info'>
+                                        <aside class='left-col'>
+                                            <span><b>Donation ID: </b>" . htmlspecialchars($row['donation_id']) . "</span>
+                                            <span><b>Donor Name: </b>" . htmlspecialchars($row['donor_name']) . "</span>
+                                            <span><b>Email: </b>" . htmlspecialchars($row['donor_email']) . "</span>
+                                        </aside>
+                                        <aside class='right-col'>
+                                            <span><b>Amount: </b>" . htmlspecialchars('₱' . number_format($row['donation_amount'], 2)) . "</span>
+                                            <span><b>Contact:</b>" . htmlspecialchars($row['donor_contact']) . "</span>
+                                            <span><b>Date: </b>" . htmlspecialchars($row['donation_date']) . "</span>
+                                        </aside>
+                                    </div>
+                                    <p><b>Message: </b>" . htmlspecialchars($row['donor_message']) . "</p>
+                                </article>
+                            ";
+                        }
+                    } else {
+                        echo "<p class='no-adopt-record'>No donation records found.</p>";
+                    }
+                    // Connection remains open for the next query
+                ?>
+            </div>
         </section>
 
-        <!-- ========== Volunteer Tab ========== -->
         <section class="admin-page" id="volunteer">
+            <h2>Volunteer Dashboard</h2>
+            <div class="adopt-card-container">
+                <?php
+                    // Assuming $conn is still open
+                    $sql_volunteer = "SELECT * FROM volunteer_tbl ORDER BY submission_date DESC";
+                    $result_volunteer = $conn->query($sql_volunteer);
 
+                    if ($result_volunteer->num_rows > 0) {
+                        while($row = $result_volunteer->fetch_assoc()) {
+                            echo "
+                                <article class='adopt-card volunteer-card'>
+                                    <div class='adopter-info'>
+                                        <aside class='left-col'>
+                                            <span><b>Volunteer ID: </b>" . htmlspecialchars($row['volunteer_id']) . "</span>
+                                            <span><b>Name: </b>" . htmlspecialchars($row['volunteer_name']) . "</span>
+                                            <span><b>Email: </b>" . htmlspecialchars($row['volunteer_email']) . "</span>
+                                            <span><b>Phone: </b>" . htmlspecialchars($row['volunteer_phone']) . "</span>
+                                        </aside>
+                                        <aside class='right-col'>
+                                            <span><b>Availability: </b>" . htmlspecialchars($row['availability']) . "</span>
+                                            <span><b>Commitment:</b>" . htmlspecialchars($row['commitment']) . "</span>
+                                            <span><b>Area of Interest: </b>" . htmlspecialchars($row['area_of_interest']) . "</span>
+                                            <span><b>Submission Date: </b>" . htmlspecialchars($row['submission_date']) . "</span>
+                                        </aside>
+                                    </div>
+                                    <p><b>Address: </b>" . htmlspecialchars($row['volunteer_address']) . "</p>
+                                    <p><b>Experience: </b>" . htmlspecialchars($row['experience']) . "</p>
+                                </article>
+                            ";
+                        }
+                    } else {
+                        echo "<p class='no-adopt-record'>No volunteer applications found.</p>";
+                    }
+
+                    // Close the database connection once, at the end of all database operations
+                    $conn->close();
+                ?>
+            </div>
         </section>
     </main>
 
