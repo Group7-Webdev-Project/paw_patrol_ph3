@@ -81,10 +81,10 @@
                                             <td>" . htmlspecialchars($row['adoption_story']) . "</td>
                                             <td>" . htmlspecialchars($row['submission_date']) . "</td>
                                             <td>
-                                                <select class='status-dropdown'>
-                                                    <option value='pending'>Pending</option>
-                                                    <option value='approved'>Approved</option>
-                                                    <option value='rejected'>Rejected</option>
+                                                <select class='adopt-status status-dropdown' data-id='" . $row['adoption_id'] ."'>
+                                                    <option value='Pending' " . ($row['status'] == 'Pending' ? 'selected' : '') . ">Pending</option>
+                                                    <option value='Approved' " . ($row['status'] == 'Approved' ? 'selected' : '') . ">Approved</option>
+                                                    <option value='Rejected' " . ($row['status'] == 'Rejected' ? 'selected' : '') . ">Rejected</option>
                                                 </select>
                                             </td>
                                         </tr>
@@ -178,10 +178,10 @@
                                             <td>" . htmlspecialchars($row['area_of_interest']) . "</td>
                                             <td>" . htmlspecialchars($row['submission_date']) . "</td>
                                             <td>
-                                                <select class='status-dropdown'>
-                                                    <option value='pending'>Pending</option>
-                                                    <option value='approved'>Approved</option>
-                                                    <option value='rejected'>Rejected</option>
+                                                <select class='vol-status status-dropdown' data-id='" . $row['volunteer_id'] . "'>
+                                                    <option value='Pending' " . ($row['status'] == 'Pending' ? 'selected' : '') . ">Pending</option>
+                                                    <option value='Approved' " . ($row['status'] == 'Approved' ? 'selected' : '') . ">Approved</option>
+                                                    <option value='Rejected' " . ($row['status'] == 'Rejected' ? 'selected' : '') . ">Rejected</option>
                                                 </select>
                                             </td>
                                         </tr>
@@ -237,6 +237,63 @@
 
         // default page
         showPage('adoption');
+
+
+        // Adoption Status
+        function adoptionStatus() {
+            document.querySelectorAll(".adopt-status").forEach(dropdown => {
+                dropdown.addEventListener("change", function () {
+                    const adoptionID = this.dataset.id;
+                    const newStatus = this.value;
+
+                    fetch("update_adoption_status.php", {
+                        method: "POST",
+                        headers: {"Content-Type": "application/json"},
+                        body: JSON.stringify({
+                            adoption_id: adoptionID,
+                            status: newStatus
+                        })
+                    })
+                    .then(res => res.text())
+                    .then(data => {
+                        console.log("Updated response:", data);
+                        alert("Status updated!");
+                    })
+                    .catch(err => console.error("Error updating:", err));
+                });
+            });
+        }
+
+        // Volunteer Status 
+        function volunteerStatus() {
+            document.querySelectorAll(".vol-status").forEach(dropdown => {
+                dropdown.addEventListener("change", function () {
+                    const volunteerID = this.dataset.id;
+                    const newStatus = this.value;
+                    
+                    fetch("update_volunteer_status.php", {
+                        method: "POST",
+                        headers: {"Content-Type": "application/json"},
+                        body: JSON.stringify({
+                            volunteer_id: volunteerID,
+                            status: newStatus
+                        })
+                    })
+                    .then(res => res.text())
+                    .then(data => {
+                        console.log("Updated response:", data);
+                        alert("Volunteer status updated!");
+                    })
+                    .catch(err => console.error("Error updating volunteer status:", err));
+                });
+            });
+        }
+
+        // Setup when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            adoptionStatus();
+            volunteerStatus();
+        });
     </script>
 </body>
 </html>

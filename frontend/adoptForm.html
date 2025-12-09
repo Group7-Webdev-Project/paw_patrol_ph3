@@ -319,20 +319,20 @@
                     console.log('Sending adoption application...');
 
                     // Send email
-                    // emailjs.send(CONFIG.EMAILJS_ADOPT_SERVICE_ID, CONFIG.EMAILJS_ADOPT_TEMPLATE_ID, templateParams)
-                    //     .then(function(response) {
-                    //         console.log('Email sent!', response);
-                    //         alert('Thank you for your adoption application! We will review it and contact you shortly.');
-                    //         adoptionForm.reset();
-                    //         // Redirect after success
-                    //         setTimeout(() => {
-                    //             window.location.href = 'index.html';
-                    //         }, 2000);
-                    //     })
-                    //     .catch(function(error) {
-                    //         console.error('Email failed:', error);
-                    //         alert('Error: ' + (error.text || error.message || 'There was an error submitting your application.'));
-                    //     });
+                    emailjs.send(CONFIG.EMAILJS_ADOPT_SERVICE_ID, CONFIG.EMAILJS_ADOPT_TEMPLATE_ID, templateParams)
+                        .then(function(response) {
+                            console.log('Email sent!', response);
+                            alert('Thank you for your adoption application! We will review it and contact you shortly.');
+                            adoptionForm.reset();
+                            // Redirect after success
+                            setTimeout(() => {
+                                window.location.href = 'index.html';
+                            }, 2000);
+                        })
+                        .catch(function(error) {
+                            console.error('Email failed:', error);
+                            alert('Error: ' + (error.text || error.message || 'There was an error submitting your application.'));
+                        });
                 });
             }
         }
