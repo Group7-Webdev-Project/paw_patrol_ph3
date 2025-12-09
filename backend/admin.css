@@ -200,7 +200,9 @@ table.dashboard-table th {
     font-weight: 600;
     border-bottom: 2px solid #7C3AED;
 }
-
+    table.dashboard-table th.adopt-story {
+        min-width: 250px;
+    }
 table.dashboard-table td {
     padding: 12px 15px;
     border-bottom: 1px solid #e0e0e0;

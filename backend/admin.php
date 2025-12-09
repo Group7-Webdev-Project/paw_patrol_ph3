@@ -57,14 +57,14 @@
                             <th>Pet Name</th>
                             <th>Pet Breed</th>
                             <th>Home Type</th>
-                            <th>Adoption Story</th>
+                            <th class="adopt-story">Adoption Story</th>
                             <th>Submission Date</th>
                             <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                            $sql = "SELECT * FROM adoption_tbl ORDER BY adoption_id ASC";
+                            $sql = "SELECT * FROM adoption_tbl ORDER BY status ASC, submission_date DESC";
                             $result = $conn->query($sql);
 
                             if ($result->num_rows > 0) {
@@ -162,7 +162,7 @@
                     </thead>
                     <tbody>
                         <?php
-                            $sql_volunteer = "SELECT * FROM volunteer_tbl ORDER BY volunteer_id ASC";
+                            $sql_volunteer = "SELECT * FROM volunteer_tbl ORDER BY status ASC, submission_date DESC";
                             $result_volunteer = $conn->query($sql_volunteer);
 
                             if ($result_volunteer->num_rows > 0) {
