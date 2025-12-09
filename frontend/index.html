@@ -653,12 +653,27 @@
                         donor_contact: document.getElementById('donor-contact').value,
                         donation_amount: selectedAmount,
                         donor_message: document.getElementById('donor-message').value,
-                        donation_date: new Date().toLocaleDateString()
+                        donation_date: new Date().toISOString().split('T')[0]
                     };
+
+                    // Send to PHP backend
+                    fetch("save_donation.php", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(templateParams)
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        console.log("PHP response:", data);
+                    })
+                    .catch(error => console.error("Error sending to PHP donation:", error));
 
                     console.log('Sending donation...');
 
                     // Send email
+                    
                     emailjs.send(CONFIG.EMAILJS_SERVICE_ID, CONFIG.EMAILJS_TEMPLATE_ID, templateParams)
                         .then(function(response) {
                             console.log('Email sent!', response);
@@ -713,8 +728,22 @@
                         commitment: document.getElementById('commitment').value,
                         area_of_interest: document.getElementById('areaOfInterest').value,
                         experience: document.getElementById('experience').value,
-                        submission_date: new Date().toLocaleDateString()
+                        submission_date: new Date().toISOString().split('T')[0]
                     };
+
+                    // Send to PHP backend
+                    fetch("save_volunteer.php", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(templateParams)
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        console.log("PHP response:", data);
+                    })
+                    .catch(error => console.error("Error sending to PHP volunteer:", error));
 
                     console.log('Sending volunteer application...');
 

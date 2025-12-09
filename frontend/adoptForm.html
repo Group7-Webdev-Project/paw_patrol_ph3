@@ -102,10 +102,10 @@
             <div class="form-group">
                 <label>Type of Home</label>
                 <select id="adoptHomeType" required>
-                <option value="" disabled selected>Select</option>
-                <option>House</option>
-                <option>Apartment</option>
-                <option>Farm</option>
+                    <option value="" disabled selected>Select</option>
+                    <option>House</option>
+                    <option>Apartment</option>
+                    <option>Farm</option>
                 </select>
             </div>
 
@@ -299,26 +299,40 @@
                         pet_name: pet.name,
                         pet_breed: pet.breed,
                         pet_age: pet.age,
-                        submission_date: new Date().toLocaleDateString()
+                        submission_date: new Date().toISOString().split('T')[0]
                     };
+
+                    // Send to PHP backend
+                    fetch("save_adoption.php", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(templateParams)
+                    })
+                    .then(res => res.text())
+                    .then(data => {
+                        console.log("PHP response: ", data);
+                    })
+                    .catch(err => console.error("Error sending to PHP adoption:", err));
 
                     console.log('Sending adoption application...');
 
                     // Send email
-                    emailjs.send(CONFIG.EMAILJS_ADOPT_SERVICE_ID, CONFIG.EMAILJS_ADOPT_TEMPLATE_ID, templateParams)
-                        .then(function(response) {
-                            console.log('Email sent!', response);
-                            alert('Thank you for your adoption application! We will review it and contact you shortly.');
-                            adoptionForm.reset();
-                            // Redirect after success
-                            setTimeout(() => {
-                                window.location.href = 'index.html';
-                            }, 2000);
-                        })
-                        .catch(function(error) {
-                            console.error('Email failed:', error);
-                            alert('Error: ' + (error.text || error.message || 'There was an error submitting your application.'));
-                        });
+                    // emailjs.send(CONFIG.EMAILJS_ADOPT_SERVICE_ID, CONFIG.EMAILJS_ADOPT_TEMPLATE_ID, templateParams)
+                    //     .then(function(response) {
+                    //         console.log('Email sent!', response);
+                    //         alert('Thank you for your adoption application! We will review it and contact you shortly.');
+                    //         adoptionForm.reset();
+                    //         // Redirect after success
+                    //         setTimeout(() => {
+                    //             window.location.href = 'index.html';
+                    //         }, 2000);
+                    //     })
+                    //     .catch(function(error) {
+                    //         console.error('Email failed:', error);
+                    //         alert('Error: ' + (error.text || error.message || 'There was an error submitting your application.'));
+                    //     });
                 });
             }
         }
