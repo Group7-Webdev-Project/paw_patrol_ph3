@@ -46,122 +46,155 @@
 
         <section class="admin-page" id="adoption">
             <h2>Adoption Dashboard</h2>
-            <div class="adopt-card-container">
-                <?php
-                    // Re-include config.php or ensure connection is open here if it was closed prematurely
-                    // Assuming $conn is available from the initial 'include config.php'
+            <div class="table-container">
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Pet Name</th>
+                            <th>Pet Breed</th>
+                            <th>Home Type</th>
+                            <th>Adoption Story</th>
+                            <th>Submission Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            $sql = "SELECT * FROM adoption_tbl ORDER BY adoption_id ASC";
+                            $result = $conn->query($sql);
 
-                    $sql = "SELECT * FROM adoption_tbl ORDER BY submission_date DESC";
-                    $result = $conn->query($sql);
-
-                    if ($result->num_rows > 0) {
-                        while($row = $result->fetch_assoc()) {
-                            echo "
-                                <article class='adopt-card'>
-                                    <div class='adopter-info'>
-                                        <aside class='left-col'>
-                                            <span><b>Adoption ID: </b>" . htmlspecialchars($row['adoption_id']) . "</span>
-                                            <span><b>Name: </b>" . htmlspecialchars($row['adopter_name']) . "</span>
-                                            <span><b>Email: </b>" . htmlspecialchars($row['adopter_email']) . "</span>
-                                        </aside>
-                                        <aside class='right-col'>
-                                            <span><b>Phone: </b>" . htmlspecialchars($row['adopter_phone']) . "</span>
-                                            <span><b>Other Pets:</b>" . htmlspecialchars($row['other_pets']) . "</span>
-                                            <span><b>Home Type: </b>" . htmlspecialchars($row['home_type']) . "</span>
-                                        </aside>
-                                    </div>
-                                    <p><b>Address: </b>" . htmlspecialchars($row['adopter_address']) . "</p>
-                                    <p><b>Story: </b>" . htmlspecialchars($row['adoption_story']) . "</p>
-                                    <p><b>Pet Name: </b>" . htmlspecialchars($row['pet_name']) . "</p>
-                                    <p><b>Pet Breed: </b>" . htmlspecialchars($row['pet_breed']) . "</p>
-                                    <p><b>Pet Age: </b>" . htmlspecialchars($row['pet_age']) . "</p>
-                                    <p><b>Submission Date: </b>" . htmlspecialchars($row['submission_date']) . "</p>
-                                </article>
-                            ";
-                        }
-                    } else {
-                        echo "<p class='no-adopt-record'>No adoption requests found.</p>";
-                    }
-                    // Removed the premature $conn->close();
-                ?>
+                            if ($result->num_rows > 0) {
+                                while($row = $result->fetch_assoc()) {
+                                    echo "
+                                        <tr>
+                                            <td>" . htmlspecialchars($row['adoption_id']) . "</td>
+                                            <td>" . htmlspecialchars($row['adopter_name']) . "</td>
+                                            <td>" . htmlspecialchars($row['adopter_email']) . "</td>
+                                            <td>" . htmlspecialchars($row['adopter_phone']) . "</td>
+                                            <td>" . htmlspecialchars($row['pet_name']) . "</td>
+                                            <td>" . htmlspecialchars($row['pet_breed']) . "</td>
+                                            <td>" . htmlspecialchars($row['home_type']) . "</td>
+                                            <td>" . htmlspecialchars($row['adoption_story']) . "</td>
+                                            <td>" . htmlspecialchars($row['submission_date']) . "</td>
+                                            <td>
+                                                <select class='status-dropdown'>
+                                                    <option value='pending'>Pending</option>
+                                                    <option value='approved'>Approved</option>
+                                                    <option value='rejected'>Rejected</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    ";
+                                }
+                            } else {
+                                echo "<tr><td colspan='9' class='no-record'>No adoption requests found.</td></tr>";
+                            }
+                        ?>
+                    </tbody>
+                </table>
             </div>
             
         </section>
 
         <section class="admin-page" id="donation">
             <h2>Donation Dashboard</h2>
-            <div class="adopt-card-container">
-                <?php
-                    // Assuming $conn is still open
-                    $sql_donate = "SELECT * FROM donation_tbl ORDER BY donation_date DESC";
-                    $result_donate = $conn->query($sql_donate);
+            <div class="table-container">
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Donor Name</th>
+                            <th>Email</th>
+                            <th>Contact</th>
+                            <th>Amount</th>
+                            <th>Message</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            $sql_donate = "SELECT * FROM donation_tbl ORDER BY donation_id ASC";
+                            $result_donate = $conn->query($sql_donate);
 
-                    if ($result_donate->num_rows > 0) {
-                        while($row = $result_donate->fetch_assoc()) {
-                            echo "
-                                <article class='adopt-card donation-card'>
-                                    <div class='adopter-info'>
-                                        <aside class='left-col'>
-                                            <span><b>Donation ID: </b>" . htmlspecialchars($row['donation_id']) . "</span>
-                                            <span><b>Donor Name: </b>" . htmlspecialchars($row['donor_name']) . "</span>
-                                            <span><b>Email: </b>" . htmlspecialchars($row['donor_email']) . "</span>
-                                        </aside>
-                                        <aside class='right-col'>
-                                            <span><b>Amount: </b>" . htmlspecialchars('₱' . number_format($row['donation_amount'], 2)) . "</span>
-                                            <span><b>Contact:</b>" . htmlspecialchars($row['donor_contact']) . "</span>
-                                            <span><b>Date: </b>" . htmlspecialchars($row['donation_date']) . "</span>
-                                        </aside>
-                                    </div>
-                                    <p><b>Message: </b>" . htmlspecialchars($row['donor_message']) . "</p>
-                                </article>
-                            ";
-                        }
-                    } else {
-                        echo "<p class='no-adopt-record'>No donation records found.</p>";
-                    }
-                    // Connection remains open for the next query
-                ?>
+                            if ($result_donate->num_rows > 0) {
+                                while($row = $result_donate->fetch_assoc()) {
+                                    echo "
+                                        <tr>
+                                            <td>" . htmlspecialchars($row['donation_id']) . "</td>
+                                            <td>" . htmlspecialchars($row['donor_name']) . "</td>
+                                            <td>" . htmlspecialchars($row['donor_email']) . "</td>
+                                            <td>" . htmlspecialchars($row['donor_contact']) . "</td>
+                                            <td>" . htmlspecialchars('₱' . number_format($row['donation_amount'], 2)) . "</td>
+                                            <td class='message-cell'>" . htmlspecialchars($row['donor_message']) . "</td>
+                                            <td>" . htmlspecialchars($row['donation_date']) . "</td>
+                                        </tr>
+                                    ";
+                                }
+                            } else {
+                                echo "<tr><td colspan='8' class='no-record'>No donation records found.</td></tr>";
+                            }
+                        ?>
+                    </tbody>
+                </table>
             </div>
         </section>
 
         <section class="admin-page" id="volunteer">
             <h2>Volunteer Dashboard</h2>
-            <div class="adopt-card-container">
-                <?php
-                    // Assuming $conn is still open
-                    $sql_volunteer = "SELECT * FROM volunteer_tbl ORDER BY submission_date DESC";
-                    $result_volunteer = $conn->query($sql_volunteer);
+            <div class="table-container">
+                <table class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Availability</th>
+                            <th>Commitment</th>
+                            <th>Area of Interest</th>
+                            <th>Submission Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                            $sql_volunteer = "SELECT * FROM volunteer_tbl ORDER BY volunteer_id ASC";
+                            $result_volunteer = $conn->query($sql_volunteer);
 
-                    if ($result_volunteer->num_rows > 0) {
-                        while($row = $result_volunteer->fetch_assoc()) {
-                            echo "
-                                <article class='adopt-card volunteer-card'>
-                                    <div class='adopter-info'>
-                                        <aside class='left-col'>
-                                            <span><b>Volunteer ID: </b>" . htmlspecialchars($row['volunteer_id']) . "</span>
-                                            <span><b>Name: </b>" . htmlspecialchars($row['volunteer_name']) . "</span>
-                                            <span><b>Email: </b>" . htmlspecialchars($row['volunteer_email']) . "</span>
-                                            <span><b>Phone: </b>" . htmlspecialchars($row['volunteer_phone']) . "</span>
-                                        </aside>
-                                        <aside class='right-col'>
-                                            <span><b>Availability: </b>" . htmlspecialchars($row['availability']) . "</span>
-                                            <span><b>Commitment:</b>" . htmlspecialchars($row['commitment']) . "</span>
-                                            <span><b>Area of Interest: </b>" . htmlspecialchars($row['area_of_interest']) . "</span>
-                                            <span><b>Submission Date: </b>" . htmlspecialchars($row['submission_date']) . "</span>
-                                        </aside>
-                                    </div>
-                                    <p><b>Address: </b>" . htmlspecialchars($row['volunteer_address']) . "</p>
-                                    <p><b>Experience: </b>" . htmlspecialchars($row['experience']) . "</p>
-                                </article>
-                            ";
-                        }
-                    } else {
-                        echo "<p class='no-adopt-record'>No volunteer applications found.</p>";
-                    }
+                            if ($result_volunteer->num_rows > 0) {
+                                while($row = $result_volunteer->fetch_assoc()) {
+                                    echo "
+                                        <tr>
+                                            <td>" . htmlspecialchars($row['volunteer_id']) . "</td>
+                                            <td>" . htmlspecialchars($row['volunteer_name']) . "</td>
+                                            <td>" . htmlspecialchars($row['volunteer_email']) . "</td>
+                                            <td>" . htmlspecialchars($row['volunteer_phone']) . "</td>
+                                            <td>" . htmlspecialchars($row['availability']) . "</td>
+                                            <td>" . htmlspecialchars($row['commitment']) . "</td>
+                                            <td>" . htmlspecialchars($row['area_of_interest']) . "</td>
+                                            <td>" . htmlspecialchars($row['submission_date']) . "</td>
+                                            <td>
+                                                <select class='status-dropdown'>
+                                                    <option value='pending'>Pending</option>
+                                                    <option value='approved'>Approved</option>
+                                                    <option value='rejected'>Rejected</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    ";
+                                }
+                            } else {
+                                echo "<tr><td colspan='9' class='no-record'>No volunteer applications found.</td></tr>";
+                            }
 
-                    // Close the database connection once, at the end of all database operations
-                    $conn->close();
-                ?>
+                            $conn->close();
+                        ?>
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>

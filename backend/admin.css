@@ -144,7 +144,17 @@ main.main-content nav.collapsed + section.admin-page {
     width: calc(100% - 70px);
     transition: margin-left 0.3s ease, width 0.3s ease;
 }
+main.main-content nav.collapsed + section.admin-page ~ section.admin-page {
+    margin-left: 70px;
+    width: calc(100% - 70px);
+    transition: margin-left 0.3s ease, width 0.3s ease;
+}
 main.main-content nav.expanded + section.admin-page {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    transition: margin-left 0.3s ease, width 0.3s ease;
+}
+main.main-content nav.expanded + section.admin-page ~ section.admin-page {
     margin-left: 220px;
     width: calc(100% - 220px);
     transition: margin-left 0.3s ease, width 0.3s ease;
@@ -154,169 +164,114 @@ main.main-content section.admin-page {
     display: none;
     flex-direction: column;
     gap: 20px;
+    align-items: center;
+}
+
+main.main-content section.admin-page h2 {
+    color: #FF8C00;
+}
+
+/* ===== TABLE STYLING ===== */
+div.table-container {
+    width: 100%;
+    max-width: 1400px;
+    overflow-x: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+table.dashboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+table.dashboard-table thead {
+    background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%);
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+table.dashboard-table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #7C3AED;
+}
+
+table.dashboard-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #333;
+}
+
+table.dashboard-table tbody tr:hover {
+    background-color: #f5f5f5;
+    transition: background-color 0.2s ease;
+}
+
+table.dashboard-table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Message cell - truncate long text */
+table.dashboard-table td.message-cell {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Status Dropdown */
+select.status-dropdown {
+    padding: 8px 12px;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+    font-size: 12px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+select.status-dropdown:hover {
+    border-color: #7C3AED;
+}
+
+select.status-dropdown:focus {
+    outline: none;
+    border-color: #7C3AED;
+    box-shadow: 0 0 5px rgba(124, 58, 237, 0.3);
+}
+
+/* No record message */
+td.no-record {
+    text-align: center;
+    padding: 30px !important;
+    color: #999;
+    font-style: italic;
 }
 
 /*
     Adoption Tab
 */
-main.main-content section#adoption {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 main.main-content section#adoption h2 {
     font-family: 'LEMON', sans-serif;
     font-size: 24px;
 }
-section#adoption div.adopt-card-container {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    width: 100%;
-}
-section#adoption div.adopt-card-container article.adopt-card {
-    width: 500px;
-    margin: 10px;
-    background-color: #a78bfa92;
-    padding: 20px;
-    font-size: 14px;
-    border-radius: 10px;
-}
-div.adopt-card-container article.adopt-card div.adopter-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-div.adopt-card-container article.adopt-card div.adopter-info aside {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 220px;
-    margin-bottom: 5px;
-}
-    div.adopt-card-container article.adopt-card div.adopter-info aside span,
-    div.adopt-card-container article.adopt-card p {
-        margin-bottom: 10px;
-        font-size: 12px;
-        color: rgb(50, 50, 50);
-    }
-    div.adopt-card-container article.adopt-card div.adopter-info aside span {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    div.adopt-card-container article.adopt-card div.adopter-info aside span b,
-    div.adopt-card-container article.adopt-card p b {
-        color: black;
-        font-size: 14px;
-    }
 
-    /* ===== Donation & Volunteer Sections (Match Adoption Style) ===== */
+    /* ===== Donation & Volunteer Sections ===== */
 
 /* Donation Section */
-section#donation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 section#donation h2 {
     font-family: 'LEMON', sans-serif;
     font-size: 24px;
 }
 
-section#donation .adopt-card-container {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-/* Donation cards visually same as adopt cards */
-section#donation .donation-card {
-    width: 500px;
-    margin: 10px;
-    background-color: #a78bfa92;
-    padding: 20px;
-    font-size: 14px;
-    border-radius: 10px;
-}
-
-/* Reuse card internal layout */
-section#donation .donation-card .adopter-info {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-section#donation .donation-card aside {
-    width: 220px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 5px;
-}
-
-section#donation .donation-card span,
-section#donation .donation-card p {
-    margin-bottom: 10px;
-    font-size: 12px;
-    color: rgb(50, 50, 50);
-}
-
-section#donation .donation-card b {
-    color: black;
-}
-
-/* ===== Volunteer Section ===== */
-
-section#volunteer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
+/* Volunteer Section */
 section#volunteer h2 {
     font-family: 'LEMON', sans-serif;
     font-size: 24px;
-}
-
-section#volunteer .adopt-card-container {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-/* Volunteer card style same as adopt cards */
-section#volunteer .volunteer-card {
-    width: 500px;
-    margin: 10px;
-    background-color: #a78bfa92;
-    padding: 20px;
-    border-radius: 10px;
-    font-size: 14px;
-}
-
-section#volunteer .volunteer-card .adopter-info {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-section#volunteer .volunteer-card aside {
-    width: 220px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 5px;
-}
-
-section#volunteer .volunteer-card span,
-section#volunteer .volunteer-card p {
-    margin-bottom: 10px;
-    font-size: 12px;
-    color: rgb(50, 50, 50);
-}
-
-section#volunteer .volunteer-card b {
-    color: black;
 }
