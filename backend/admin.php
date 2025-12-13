@@ -1,4 +1,17 @@
 <?php
+    session_start();
+    
+    // Prevent caching to ensure session checks work properly
+    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+    header("Pragma: no-cache");
+    header("Expires: 0");
+    
+    // Check if user is logged in
+    if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+        header("Location: login.php");
+        exit();
+    }
+    
     include 'config.php';
 ?>
 
@@ -38,7 +51,7 @@
                 <span class="label">Volunteer</span>
             </a></li>
 
-            <li><a href="logout.php">
+            <li><a href="logout.php" id="logout-link">
                 <span class="material-symbols-outlined">logout</span>
                 <span class="label">Logout</span>
             </a></li>
@@ -229,6 +242,11 @@
         // clicks
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
+                // Allow logout link to navigate normally
+                if (link.id === 'logout-link') {
+                    return;
+                }
+                
                 e.preventDefault();
                 const targetId = link.getAttribute('href').substring(1);
                 showPage(targetId);

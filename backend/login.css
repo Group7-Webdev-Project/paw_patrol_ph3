@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'LEMON';
+    src: url('../frontend/fonts/LEMON.otf') format('opentype');
+}
+
+h2, span, p {
+    font-family: 'LEMON', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 20px 0;
+}
+
+/*LOGIN AND SIGNUP*/
+.login-header {
+    text-align: center;
+    padding: 10px 0 60px 0;
+}
+
+.login-header h2 {
+    color: #d94f04;
+    font-size: 50px;
+    font-weight: 700;
+    margin: 10px;
+}
+
+.login-header span {
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+#login-div {
+    background-color: #FFFFFF;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+}
+
+#login-div h2 {
+    font-size: 30px;
+    color: #7C3AED;
+}
+
+.login-container form {
+    width: 100%;
+    font-family: raleway;
+    display: flex;
+    flex-direction: column;
+    color: #2C3E50;
+}
+
+.login-container button {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #7C3AED;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #d94f04;
+}
+.login-container p {
+    font-size: 14px;
+    text-align: center;
+}
+.child-login {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.child-login input {
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 4px;
+}
+
+.child-login label {
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+.login-container a {
+    color: #0055aa;
+    text-decoration: none;
+}
