@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Leonard",
-      "type": "Golden Retriever",
+      "type": "Dog",
       "breed": "Golden Retriever",
       "age": "3 years",
       "gender": "Male",
@@ -18,14 +18,14 @@
       ],
       "images": [
         "images/adoptImages/name1.jpg",
-        "images/adoptImages/name2.jpg",
-        "images/adoptImages/name3.jpg"
+        "images/adoptImages/name1.jpg",
+        "images/adoptImages/name1.jpg"
       ]
     },
     {
       "id": 2,
       "name": "Ian",
-      "type": "Labrador Mix",
+      "type": "Dog",
       "breed": "Labrador Mix",
       "age": "2 years",
       "gender": "Male",
@@ -41,14 +41,14 @@
       ],
       "images": [
         "images/adoptImages/name2.jpg",
-        "images/adoptImages/name3.jpg",
-        "images/adoptImages/name4.jpg"
+        "images/adoptImages/name2.jpg",
+        "images/adoptImages/name2.jpg"
       ]
     },
     {
       "id": 3,
       "name": "Tyrone",
-      "type": "German Shepherd",
+      "type": "Dog",
       "breed": "German Shepherd",
       "age": "4 years",
       "gender": "Male",
@@ -64,14 +64,14 @@
       ],
       "images": [
         "images/adoptImages/name3.jpg",
-        "images/adoptImages/name4.jpg",
-        "images/adoptImages/name1.jpg"
+        "images/adoptImages/name3.jpg",
+        "images/adoptImages/name3.jpg"
       ]
     },
     {
       "id": 4,
       "name": "Zweily",
-      "type": "Siamese Cat",
+      "type": "Cat",
       "breed": "Siamese Mix",
       "age": "1 year",
       "gender": "Female",
@@ -87,8 +87,100 @@
       ],
       "images": [
         "images/adoptImages/name4.jpg",
-        "images/adoptImages/name2.jpg",
-        "images/adoptImages/name3.jpg"
+        "images/adoptImages/name4.jpg",
+        "images/adoptImages/name4.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Tatin",
+      "type": "Dog",
+      "breed": "Golden Retriever Mix",
+      "age": "3 years",
+      "gender": "Male",
+      "size": "Large",
+      "location": "Northside Animal Shelter",
+      "about": "Buddy is a friendly and loyal dog who loves people and outdoor activities. He enjoys long walks, playing fetch, and relaxing by your side after a fun day. Buddy is great with families and would thrive in an active home with space to move around.",
+      "health": [
+        "Fully vaccinated",
+        "Neutered",
+        "Microchipped",
+        "Dewormed",
+        "No known health issues"
+      ],
+      "images": [
+        "images/adoptImages/golden-ret-mix.jpg",
+        "images/adoptImages/golden-ret-mix.jpg",
+        "images/adoptImages/golden-ret-mix.jpg"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Jayjo",
+      "type": "Bird",
+      "breed": "Green Cheek Conure",
+      "age": "1 year",
+      "gender": "Unknown",
+      "size": "Small",
+      "location": "City Exotic Pet Rescue",
+      "about": "Kiwi is a colorful and energetic conure who loves attention and interaction. He enjoys perching on shoulders, mimicking sounds, and playing with bird-safe toys. Kiwi would do best with an owner who has time to socialize and bond with him daily.",
+      "health": [
+        "Vet checked",
+        "Wing trimmed",
+        "Parasite free",
+        "Healthy feathers",
+        "Cage and care guide included"
+      ],
+      "images": [
+        "images/adoptImages/green-cheek-conure.jpeg",
+        "images/adoptImages/green-cheek-conure.jpeg",
+        "images/adoptImages/green-cheek-conure.jpeg"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Jiweb",
+      "type": "Cat",
+      "breed": "Domestic Longhair",
+      "age": "2 years",
+      "gender": "Male",
+      "size": "Medium",
+      "location": "Downtown Shelter",
+      "about": "Shadow is a calm and affectionate long-haired cat who enjoys quiet companionship. He loves gentle brushing, window watching, and warm sleeping spots. Shadow would be perfect for a relaxed home or first-time cat owner.",
+      "health": [
+        "Vaccinated",
+        "Neutered",
+        "Microchipped",
+        "Flea treated",
+        "Indoor cat recommended"
+      ],
+      "images": [
+        "images/adoptImages/domestic-longhair.png",
+        "images/adoptImages/domestic-longhair.png",
+        "images/adoptImages/domestic-longhair.png"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Kelly",
+      "type": "Rabbit",
+      "breed": "Holland Lop",
+      "age": "8 months",
+      "gender": "Female",
+      "size": "Small",
+      "location": "Sunset Small Pet Rescue",
+      "about": "Clover is a sweet and gentle rabbit with floppy ears and a curious personality. She enjoys fresh veggies, hopping around safely, and gentle human interaction. Clover would be a great companion for a calm household.",
+      "health": [
+        "Health checked",
+        "Spayed",
+        "Litter trained",
+        "Healthy weight",
+        "Indoor housing recommended"
+      ],
+      "images": [
+        "images/adoptImages/holland-lop.jpg",
+        "images/adoptImages/holland-lop.jpg",
+        "images/adoptImages/holland-lop.jpg"
       ]
     }
   ]

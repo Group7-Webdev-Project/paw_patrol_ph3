@@ -132,3 +132,33 @@ document.querySelectorAll('.footer-info-container article aside h4').forEach(inf
         parentAside.classList.toggle('active');
     });
 });
+
+// Back to Adoption button: prefer history.back(), fall back to meet-more or index
+document.addEventListener('DOMContentLoaded', () => {
+    const backBtn = document.getElementById('back-adoption');
+    if (!backBtn) return;
+
+    backBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // If there's a previous entry in history, go back
+        if (window.history.length > 1) {
+            window.history.back();
+            return;
+        }
+
+        // If referrer indicates the user came from meet-more, go there
+        try {
+            const ref = document.referrer || '';
+            if (ref.includes('meet-more.html')) {
+                window.location.href = 'meet-more.html';
+                return;
+            }
+        } catch (err) {
+            // ignore
+        }
+
+        // final fallback
+        window.location.href = 'index.html';
+    });
+});

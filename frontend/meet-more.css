@@ -1,0 +1,425 @@
+/* ======== FONT IMPORTS ======== */
+@font-face {
+    font-family: 'LEMON';
+    src: url('fonts/LEMON.otf') format('opentype');
+}
+
+/* ======== GLOBAL STYLES ======== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F3E8FF;
+    color: #4C1D95;
+    line-height: 1.6;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* ======== HEADER ======== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 40px;
+    box-sizing: border-box;
+    z-index: 1000;
+    background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%);
+    color: white;
+    border-bottom: none;
+}
+
+    /* ======= LOGO ==========*/
+header aside.logo-container {
+    height: 50px;
+    width: auto;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 0;
+    gap: 10px;
+}
+header aside.logo-container h3 { 
+    width: auto;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'LEMON';
+    color: white;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit; /* keeps the h3 white */
+}
+
+
+header div.logo-img-container {
+    height: 35px;
+    width: 35px;
+}
+header div.logo-img-container img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+    /*========= NAVIGATION ==========*/
+header nav.navigation {
+    display: flex;
+    justify-content: flex-end;
+    gap: 35px;
+    flex: 1;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+/* ===== Enhanced header link hover (matches footer button feel) ===== */
+header nav.navigation a {
+    position: relative;
+    text-decoration: none;
+    padding: 8px 0;
+    border-radius: 0;
+    transition: all 0.3s ease-in-out;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    border-bottom: 2px solid transparent;
+}
+
+header nav.navigation a:hover {
+    background-color: transparent;
+    color: white;
+    box-shadow: none;
+    transform: none;
+    border-bottom: 2px solid #f26929;
+}
+
+
+    /*=========== HAMBORGAR ICON FOR MOBILE ============*/
+/* hide toggle button for PC screen*/
+header div.menu-toggle {
+    display: none;
+    z-index: 1001;
+    cursor: pointer;
+}
+
+/* hide nav menu for mobile */
+header div.small-screen-menu {
+    display: none;
+}
+
+
+/* Meet More - Cards layout */
+:root{
+    --bg: #f7f7f9;
+    --card: #ffffff;
+    --accent: #2f80ed;
+    --muted: #666;
+}
+
+.logo-container{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.logo-img-container img{width:48px;height:48px;object-fit:cover}
+.navigation a{margin-left:16px;color:var(--muted);text-decoration:none}
+.meet-more-main { position: relative;}
+.meet-more-main .container{max-width:1100px;margin:100px auto 32px;padding:0 16px; min-height: 70vh;}
+.meet-more-main h1{margin:0 0 8px}
+.lead{color:var(--muted);margin:0 0 20px}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.pet-card{display:block;background:var(--card);padding:14px;border-radius:10px;text-decoration:none;color:inherit;box-shadow:0 1px 4px rgba(0,0,0,0.06);transition:transform .15s,box-shadow .15s}
+.pet-card:hover{transform:translateY(-6px);box-shadow:0 6px 18px rgba(15,30,80,0.12)}
+.pet-card .card-top{display:flex;align-items:center;gap:12px}
+.pet-card img{width:84px;height:64px;object-fit:cover;border-radius:8px}
+.pet-card h3{margin:0;font-size:18px}
+.pet-card p{margin:6px 0 0;color:var(--muted);font-size:14px}
+.meta{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.meta span{background:#f1f5ff;color:var(--accent);padding:6px 8px;border-radius:999px;font-size:13px}
+
+@media (max-width:520px){.pet-card img{display:none}}
+
+a.back-home {
+    top: 10px;
+    right: 50px;
+    color: #4C1D95;
+    position: absolute;
+    font-size: 14px;
+    font-weight: 550;
+}
+    a.back-home:hover {
+        color: #f26929;
+    }
+
+/* 
+=========================
+        FOOTER
+=========================
+*/
+footer {
+    width: 100%;
+    background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%);
+    color: white;
+}
+
+    /* ================ UPPER FOOTER =========== */
+footer section.upper-footer {
+    min-height: 60vh;
+    margin: 0 auto;
+    height: 85%;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} 
+
+    /* for logo in the footer */
+footer section.upper-footer div.footer-logo-container {
+    display: flex;
+    align-items: center;
+    margin: 20px 0 0 0;
+}
+
+    /* for image in the footer*/
+footer section.upper-footer div.footer-img-container {
+    width: 100px;
+}
+
+footer section.upper-footer div.footer-img-container img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+
+    /* More information for the footer area */
+footer section.upper-footer div.footer-info-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+div.footer-info-container article {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+div.footer-info-container article aside {
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+    gap: 10px;
+}
+
+div.footer-info-container article aside h4 i { display: none; }
+
+div.footer-info-container article aside h4 { margin-bottom: 10px; }
+
+div.footer-info-container article aside a { font-size: 14px; }
+
+    /* sign-up in the footer*/
+div.footer-info-container aside.footer-sign-up {
+    height: 150px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin: 20px 0;
+}
+
+div.footer-info-container aside.footer-sign-up p {
+    color: #7C3AED;
+    font-weight: 525;
+    padding-bottom: 10px;
+}
+    /* sign-up button in the footer */
+div.footer-info-container aside.footer-sign-up a {
+    padding: 20px;
+    background: #7C3AED;
+    width: 70%;
+    border-radius: 50px;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}   
+
+div.footer-info-container aside.footer-sign-up a:hover {
+    background: #f26929 !important;
+    color: white;
+    transform: scale(1.02);
+}
+
+    /* legal info in footer*/
+footer section.upper-footer div.legal-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    flex-wrap: wrap;
+    margin: 30px 0 50px 0;
+}
+
+footer section.upper-footer div.legal-info a {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    font-size: 13px;
+}
+
+    /* separator line  */
+footer section.upper-footer div.legal-info a::after {
+    content: "|";
+    margin-left: 15px;
+    color: white;
+}
+
+footer section.upper-footer div.legal-info a:last-child::after { content: ""; }
+
+/* ================ LOWER FOOTER =========== */
+footer section.lower-footer {
+    min-height: 70px;
+    background-color: #5B21B6;
+    display: flex;
+}
+
+footer section.lower-footer div {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    background-color: #5B21B6;
+    flex-wrap: wrap;
+    padding: 10px 0;
+}
+    /* copyright and trademark info */
+footer section.lower-footer div p {
+    font-size: 13px;
+    font-family: sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+footer section.lower-footer div p span { margin-right: 10px; }
+
+    /* socail media links */
+footer section.lower-footer div aside a {
+    margin-right: 25px;
+    font-size: 20px;
+}
+
+
+/* ======== RESPONSIVE DESIGN - MOBILE ======== */
+@media (max-width: 768px) {
+
+    /*======= HEADER =========*/
+    /* hide PC nav bar in mobile version*/
+    header nav.navigation { display: none; }
+
+    /* show nav when active */
+    header nav.navigation.active { display: flex; }
+
+    /* show the jirburger icon */
+    header div.menu-toggle { display: block; }
+
+    /* side menu for mobile screen */
+    header div.small-screen-menu {
+        background: linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%);
+        height: 100vh;
+        width: 100%;
+        max-width: 250px;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding: 80px 10px;
+        transition: right 0.3s ease;
+        z-index: 1000;
+        box-sizing: border-box;
+    }
+
+    header div.small-screen-menu a {
+        color: white;
+        text-decoration: none;
+        margin: 10px 0;
+        font-size: 16px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5px 15px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    header div.small-screen-menu a:hover {
+        background-color: #f26929;
+        color: white;
+        border-radius: 10px;
+        transform: scale(1.02);
+    }
+
+    header div.small-screen-menu.active { right: 0; }
+
+        /* ========== FOOTER =========== */
+    div.footer-info-container article { padding-top: 0; }
+
+    div.footer-info-container article aside {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 10px 0;
+    }
+
+    /* hide info links by default on mobile */
+    div.footer-info-container article aside a { display: none; }
+
+    div.footer-info-container article aside h4 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    div.footer-info-container article aside h4 i { 
+        display: inline-block;
+        transition: transform 0.3s ease; 
+    }
+
+    .footer-info-container article aside.active h4 i { transform: rotate(180deg); }
+
+    /* Show links when active */
+    div.footer-info-container article aside.active a {
+        display: block;
+        padding-left: 10px;
+    }
+
+    /* sign up aligning center */
+    div.footer-info-container aside.footer-sign-up {
+        margin: 0 auto;
+    }
+
+    /* social media link aligning center */
+    section.lower-footer div aside {
+        margin: 0 auto;
+    }
+}

@@ -66,11 +66,11 @@ const galleryList = [
     { "image" : "images/adoptImages/name1.jpg" },
     { "image" : "images/adoptImages/name3.jpg" },
     { "image" : "images/adoptImages/name2.jpg" },
-    { "image" : "images/adoptImages/name1.jpg" },
+    { "image" : "images/adoptImages/golden-ret-mix.jpg" },
     { "image" : "images/adoptImages/name4.jpg" },
-    { "image" : "images/adoptImages/name2.jpg" },
-    { "image" : "images/adoptImages/name4.jpg" },
-    { "image" : "images/adoptImages/name3.jpg" },
+    { "image" : "images/adoptImages/holland-lop.jpg" },
+    { "image" : "images/adoptImages/green-cheek-conure.jpeg" },
+    { "image" : "images/adoptImages/domestic-longhair.png" }
 ];
 
 async function makeGallery() {
@@ -245,7 +245,8 @@ const adoptList = [
     {
         "id": null,
         "image": "images/logo1.png",
-        "name": "Meet More"
+        "name": "Meet More",
+        "link": "meet-more.html"
     }
 ];
 
@@ -264,11 +265,16 @@ async function makeAdoptHomepage() {
             <h3>${card.name}</h3>
         `;
         
-        // Add click event if pet has an ID
+        // Add click event if pet has an ID or a link
         if (card.id) {
             adoptCard.style.cursor = 'pointer';
             adoptCard.addEventListener('click', () => {
                 window.location.href = `pet-details.html?id=${card.id}`;
+            });
+        } else if (card.link) {
+            adoptCard.style.cursor = 'pointer';
+            adoptCard.addEventListener('click', () => {
+                window.location.href = card.link;
             });
         }
         
