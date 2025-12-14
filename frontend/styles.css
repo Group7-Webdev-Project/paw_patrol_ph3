@@ -517,11 +517,11 @@ main section#adopt div.container-adopt-card {
 }
 section#adopt div.container-adopt-card aside.adopt-card {
     position: relative;
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(255, 255, 255);
     height: 250px;
     width: 200px;
     margin: 10px;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease-in-out, border 0.3s ease-in-out;
     cursor: pointer;
@@ -531,6 +531,9 @@ section#adopt div.container-adopt-card aside.adopt-card {
         transform: scale(1.05);
         border: 3px solid #f26929;
         box-shadow: 0 8px 20px rgba(242, 105, 41, 0.3);
+    }
+    section#adopt div.container-adopt-card aside.adopt-card:last-child h3 {
+        padding: 0 0 20px 0;
     }
 
 div.container-adopt-card aside.adopt-card div.adopt-img-container {
