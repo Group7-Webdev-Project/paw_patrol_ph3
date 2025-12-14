@@ -1,5 +1,3 @@
-<img width="250" height="489" alt="image" src="https://github.com/user-attachments/assets/67417a6a-dec2-41f5-bada-0cb0a79fefae" /># Paw Patrol Website – Phase 3 (Backend Integration)
-
 ## Project Overview
 
 Phase 3 extends the Paw Patrol Website by introducing a **backend system** to support administrative functions and database-driven content. This phase focuses on server-side development using **PHP** and **MySQL**, enabling data management through an **Admin Dashboard**.
